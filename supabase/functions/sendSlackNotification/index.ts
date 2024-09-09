@@ -3,11 +3,14 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 // Load environment variables
 const SUPABASE_URL = "https://khcpxinwheaivuwgnxue.supabase.co";
-const SUPABASE_SERVICE_ROLE_KEY = ""; //add the service role key
+const SUPABASE_SERVICE_ROLE_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtoY3B4aW53aGVhaXZ1d2dueHVlIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyMzA1NDQ3NywiZXhwIjoyMDM4NjMwNDc3fQ.6PvOZOTYta7I8I8ueIbwAtzQyGo-ToPiriCqbak_R_E";
 
 // Webhooks for different user types
-const FOUNDER_SLACK_WEBHOOK = ""; //add the webhook URL for the Founder
-const CHAMPION_SLACK_WEBHOOK = ""; //add the webhook URL for the Champion
+const FOUNDER_SLACK_WEBHOOK =
+  "https://hooks.slack.com/services/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";
+const CHAMPION_SLACK_WEBHOOK =
+  "https://hooks.slack.com/services/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";
 
 // Initialize Supabase client
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -100,10 +103,10 @@ serve(async (req) => {
         console.log("Notification sent successfully.");
 
         // Optionally delete processed item from queue
-        // await supabase
-        //   .from("slack_notifications_queue")
-        //   .delete()
-        //   .eq("id", record.id);
+        await supabase
+          .from("slack_notifications_queue")
+          .delete()
+          .eq("id", record.id);
       }
     }
 
