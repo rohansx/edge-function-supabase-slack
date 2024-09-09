@@ -1,6 +1,6 @@
 # A string used to distinguish different Supabase projects on the same host. Defaults to the
 # working directory name when running `supabase init`.
-project_id = "rappo"
+project_id = "edge-function-supabase-slack"
 
 [api]
 enabled = true
