@@ -8,11 +8,9 @@ const SUPABASE_SERVICE_ROLE_KEY =
 
 // Webhooks for different user types
 const FOUNDER_SLACK_WEBHOOK =
-  "https://hooks.slack.com/services/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";
+  "https://hooks.slack.com/services/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";
 const CHAMPION_SLACK_WEBHOOK =
-  "https://hooks.slack.com/services/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";
-
-// Initialize Supabase client
+  "https://hooks.slack.com/services/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";
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 serve(async (req) => {
